@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="theme-color" content="#000" />
+      <title>Plagiarism Checker - 100% Free Online Plagiarism Detector</title>
+      
+      <link rel="stylesheet" href="assets/css/circle.css">
+      <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+      <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+      <link rel="dns-prefetch" href="https://apis.google.com">
+      <link rel="dns-prefetch" href="https://www.gstatic.com">
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+      <link rel="dns-prefetch" href="//www.google-analytics.com">
+      <link rel="shortcut icon" href="https://smallseotools.com/imgs/favicon.png" type="image/x-icon">
+      <link rel="manifest" href="https://smallseotools.com/manifest.json">
+      <!-- <link rel="stylesheet" href="https://smallseotools.com/assets/css/bootstrap.min.css"> -->
+      <link href = "assets/css/style.css" rel="stylesheet" media="screen">
+      <link href="assets/fontawesome/css/fontawesome.css" rel="stylesheet">
+      <link href="assets/fontawesome/css/brands.css" rel="stylesheet">
+      <link href="assets/fontawesome/css/solid.css" rel="stylesheet">
+      <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+      <script defer src="assets/fontawesome/js/all.js"></script>
+      <script type="text/javascript">
+         var banner_popup_show='<a href="https://www.grammarly.com/?q=grammar&utm_source=placement&utm_medium=cpc&utm_content=sst_Popup2&utm_term=smallseotools" title=""><img src="https://smallseotools.com/over.png" alt=""/></a>';
+      </script>
+      <style>
+         .svg-inline--fa{
+            vertical-align: middle;
+            float: left;
+         }
+
+         .checked_box p, .result_box p{
+            font-weight: 700;
+         }
+         #howPlagiarize .bar {
+            border: .08em solid #ea5050;
+         }
+      </style>
+   </head>
+   <body style="background-image: url('background.png');">
+      <!-- <i class="fas fa-user"></i>
+      <i class="far fa-user"></i>
+      <i class="fal fa-user"></i>
+      <i class="fab fa-user"></i> -->
+      <div class="error-popup-box">
+         <div class="model-bg"></div>
+         <div class="model-box error-popup">
+            <div class="heading"></div>
+            <div class="model_body">
+               <div class="error_type"></div>
+               <div class="error_type_desc"></div>
+            </div>
+            <div class="model_footer">
+               <span class="btn btn-danger close-model pull-right" onclick="removeError()">Close</span>
+            </div>
+         </div>
+      </div>
+     
+      <div class="container-fluid pn tool_area_banner">
+         <div class="after_navbar" style="min-height:100px;overflow:hidden" style="overflow:auto;">
+            <div class="col-md-12 text-center" style="margin-bottom:20px;" id="hmmmm_nana_TSSR"></div>
+         </div>
+         <div class="clearfix"></div>
+         <div class="container pn">
+            <div class="main-content">
+               <div class="col-md-12 col-lg-12" id="alerts"></div>
+               <div id="plagchecker">
+                  <div id="LodeGif" class="LodeGif">
+                     <div class="lazy" data-name="https://smallseotools.com/asets/images/loader|.gif|image of processing|img-responsive mob_hide"></div>
+                  </div>
+                  <div class="tool_box mb20 box_shadow_border">
+                     <div class="tool_heading text-center">
+                        <h1>PLAGIARISM CHECKER</h1>
+                        <p>To use this plagiarism checker, please copy and paste your content in the box below, and then click on the big blue button that says “Check Plagiarism!” then sit back and watch as your article is scanned for duplicated content.</p>
+                     </div>
+                     <div class="clearfix"></div>
+                    
+                     <form action="https://smallseotools.com/plagiarism-checker/" enctype="multipart/form-data" id="filesForm" method="post">
+                        <div class="col-md-12 textarea_box">
+                           <div class="col-md-12 texttool_banner pn">
+                              <div class="relative">
+                                 <textarea aria-label="enter text" class="form-control check_textarea" name="txt2check" placeholder="Copy and paste your text here to detect plagiarized content ..." id="textBox"></textarea>
+                                 <img class="clr-txt cursor-p" alt="Reset Text" src="https://smallseotools.com/asets/images/cleartext.svg" onclick="clear_everything()">
+                              </div>
+                              
+                              <!-- <div class="col-md-12 col-sm-12 col-xs-12 pn new_sty">
+                                 <div class="col-md-6 col-sm-5 col-xs-6 text-left pn">
+                                    <div class="local_upload_box">
+                                       <div class="img_input_box new_input_box">
+                                          <label class="input-group new_input" for="fileupload">
+                                          <span class="input-group-addon img_input_addon new_input_addon"><i class="fa fa-link"></i></span>
+                                          <input type="file" id="fileupload" onClick="pushEventVal('plag_file')" name="files" accept=".txt" class="plc_sty">
+                                          <span id="img_name" class="form-control img_input_style new_input_style">Upload a Document:</span>
+                                          <input type="file" id="fileupload" onClick="pushEventVal('plag_file')" name="files" accept=".docx,.doc,.txt,.odt,.pdf,.rtf,.tex" class="plc_sty">
+                                          <span id="img_name" class="form-control img_input_style new_input_style">Upload a Document:( .tex, .txt, .doc, .docx, .odt, .pdf, .rtf )</span>
+                                          </label>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 col-sm-7 col-xs-6 pn text-right">
+                                    <div class="input_lable hidden-xs new_input_lable">Choose From:</div>
+                                    <span class="dropbox">
+                                    <span class="btn dropbox_style mn" id="containerDropbox"></span>
+                                    </span>
+                                    <span class="google-drive">
+                                    <span class="btn google_drive_style gdrive-in-btn gdrivebtn" id="google" onclick="onApiLoad()">
+                                    <small class="ml20 fw600"></small>
+                                    </span>
+                                    </span>
+                                 </div>
+                              </div> -->
+                              <!-- <input type="hidden" name="submission_byurl" id="submission_byurl" value="">
+                              <div class="clearfix"></div>
+                              <div class="col-md-12 input_lable pn">
+                                 <div class="pull-left">Limit: 1000 Words per Search</div>
+                                 <div class="pull-right">Total Words: <span id="totalWords">0</span></div>
+                              </div> -->
+                              <!-- <div class="clearfix"></div>
+                              <div class="col-md-12 col-sm-12 pn">
+                                 <div class="col-md-6 pn mob_center">
+                                    <span class="webpage_url">Check Plagiarism via Webpage URL</span>
+                                    <div id="web_box_url">
+                                       <label class="input-group img_input_box">
+                                       <span class="input-group-addon img_input_addon" style="line-height: 0px; ">
+                                       <i class="fa fa-link"></i>
+                                       </span>
+                                       <input aria-label="Insert Url" id="badgeUrl" type="text" class="form-control img_input_style" name="badgeUrl" value="" placeholder="Insert URL Here" style="height:auto; margin-bottom: 0px;">
+                                       <span class="input-group-addon img_input_addon" id="geturltext" style="line-height: 0px; border-radius: 0px 24px 24px 0px; cursor: pointer;">
+                                       <i class="fa fa-play"></i>
+                                       </span>
+                                       </label>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6 pn mob_center">
+                                    <span class="exclude_url">Exclude a specific URL</span>
+                                    <div id="exclude_box_url">
+                                       <label class="input-group img_input_box">
+                                       <span class="input-group-addon img_input_addon">
+                                       <i class="fa fa-link"></i>
+                                       </span>
+                                       <input aria-label="Exclude Url" id="ignoreUrl" value="" type="text" class="form-control img_input_style" name="ignore" placeholder="Insert URL Here">
+                                       </label>
+                                    </div>
+                                 </div>
+                              </div> -->
+                              <div class="clearfix"></div>
+                           </div>
+                        </div>
+                        
+                        <div class="button_box text-center "><!-- roshu_test -->
+                           <button type="button" class="check_resbtn" id="checkPlag" data-name="Check Plagiarism" style="cursor: pointer;">Check Plagiarism</button>
+                           <a href="https://smallseotools.com/deep_pcgrammar.html" class="check_resbtn" rel="nofollow" target="_blank">Check Grammar</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        
+                        
+                        
+                     </form>
+                  </div>
+                  <div class="box_shadow_border mb20 pl25" id="result-main" style="display: none";>
+                     <div class="tool_heading text-center">
+                        <h2 class="pb20 fs24" style="margin:10px 0px;">Results</h2>
+                        <div class="clearfix"></div>
+                     </div>
+                     <div>
+                        <div class="checked_box">
+                           <!-- <div class="c100 border_per0 small first_gera border_per50 border_per100" id="progressBar">
+                              <span id="pbarcounter" data-name="0">100%</span>
+                              <div class="slice">
+                                 <div class="bar"></div>
+                                 <div class="fill"></div>
+                              </div>
+                           </div> -->
+                           <div class="c100 p100 small blue" id="progressBar">
+                              <span id="pbarcounter" data-name="0">100%</span>
+                              <div class="slice">
+                                 <div class="bar"></div>
+                                 <div class="fill"></div>
+                              </div>
+                            </div>
+                           <p id="loadGif">Completed: 100% Checked</p>
+                        </div>
+                        <div class="result_box">
+                           <!-- <div class="c100 border_per0 small red border_per50 border_per100" id="howPlagiarize">
+                              <span id="plagiarizeCount">0%</span>
+                              <div class="slice">
+                                 <div class="bar"></div>
+                                 <div class="fill"></div>
+                              </div>
+                           </div> -->
+                           <div class="c100 p0 small orange" id="howPlagiarize">
+                              <span id="plagiarizeCount">100%</span>
+                              <div class="slice">
+                                 <div class="bar"></div>
+                                 <div class="fill"></div>
+                              </div>
+                            </div>
+                           <p>Plagiarism</p>
+                           <div class="c100 p0 small green" id="howUnique">
+                              <span id="uniqueCount">0%</span>
+                              <div class="slice">
+                                 <div class="bar"></div>
+                                 <div class="fill"></div>
+                              </div>
+                           </div>
+                           <p>Unique</p>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="progress">
+                           <div class="determinate" id="pbar" style="width: 100%;"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                     </div>
+                     <div class="sabr_kro" style="display: none;">
+                        <p><strong style="color:#fff;background:#0f804a;padding:5px;">Be patient!</strong> It might take a while to display the results as <strong style="color:#1e70b9;">Plagiarism Checker</strong> is searching for similarities against <strong style="color:#e23840;">billions of documents</strong> to ensure that you get <strong style="color:#0f804a;">accurate results</strong>.</p>
+                     </div>
+                     <div class="clearfix"></div>
+                     <div style="display: block;" id="ResultTabs">
+                        <!-- <ul class="nav nav-tabs result_tabs">
+                           <li class="active" style="width: 100%; border-right: none;">
+                              <a data-toggle="tab" href="#sentence">
+                                 <span class="tab_image_swr"></span>
+                                 <span class="text_active">Sentence Wise Result</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a data-toggle="tab" href="#matched">
+                                 <span class="tab_image_msr"></span>
+                                 <span class="text_active">Matched Sources</span>
+                              </a>
+                           </li>
+                           <li>
+                              <a data-toggle="tab" href="#docoment">
+                                 <div class="tab_image_dv"></div>
+                                 <span class="text_active">Document View</span>
+                              </a>
+                           </li>
+                        </ul>
+                        <div class="tab-content">
+                           <div id="sentence" class="tab-pane fade in active">
+                              <ul class="sentance_result mt20 mb20" id="resultsBars">
+                                 <li class="unique_li">
+                                    <span>Unique</span>
+                                    <p class="ossb color-808080 fs13 word_rap_el">To use this plagiarism checker, please copy and paste your content in the box below, and then click on the big blue button that says “Check Plagiarism!</p>
+                                    
+                                 </li>
+                                 <li class="plagiarized_li">
+                                    <span>Plagiarized</span>
+                                    <p class="ossb color-808080 fs13 word_rap_el">” then sit back and watch as your article is scanned for duplicated content.</p>
+                                    <div><a href="https://www.google.com/search?q=&quot;%E2%80%9D%20then%20sit%20back%20and%20watch%20as%20your%20article%20is%20scanned%20for%20duplicated%20content.&quot;" target="_blank">Compare</a></div>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div id="matched" class="tab-pane fade">
+                              <ul class="match_source_result">
+                                 <li class="main_tilte_ms">
+                                    <div class="left_area_ms">Sources</div>
+                                    <div class="right_area_ms">Similarity</div>
+                                 </li>
+                                 <li class="result_part_ms border_bottom_ms">
+                                    <div class="left_area_ms">
+                                       <form action="" method="post">
+                                          <span class="web_title_ms">Plagiarism Checker - 100% Free Online Plagiarism Detector</span>
+                                          <p class="content_ms">plagiarism checker by smallseotools, 100% free online tool that checks for plagiarism with quick and accurate results.to use this plagiarism checker, please copy and paste your content in the box below, and then click on the big blue button that says “check plagiarism!” then sit back and...</p>
+                                          <a href="https://smallseotools.com/plagiarism-checker/" class="web_link_ms">https://smallseotools.com/plagiarism-checker/</a>
+                                       </form>
+                                    </div>
+                                    <div class="right_area_ms"><span id="eeb8317568f5f2bfa0b5be3c8c676fdf">100%</span></div>
+                                 </li>
+                              </ul>
+                              <div id="trmphtml" style="display: none">
+                                 <tr>
+                                    <td colspan="5" class="tbl_res_cont">
+                                       <span style="color: #1e70b9; font-size: 14px;">Plagiarism Checker - 100% Free Online Plagiarism Detector</span>
+                                       <p style="padding: 20px 0px; font-size: 14px; color:#000;">plagiarism checker by smallseotools, 100% free online tool that checks for plagiarism with quick and accurate results.to use this plagiarism checker, please copy and paste your content in the box below, and then click on the big blue button that says “check plagiarism!” then sit back and...</p>
+                                       <a href="https://smallseotools.com/plagiarism-checker/" style="color: #0f804a;font-size: 14px; text-decoration: none;">https://smallseotools.com/plagiarism-checker/</a>
+                                    </td>
+                                    <td class="tbl_per_count" id="eeb8317568f5f2bfa0b5be3c8c676fdf1">100%</td>
+                                 </tr>
+                              </div>
+                           </div>
+                           <div id="docoment" class="tab-pane fade">
+                              <div class="document_view">
+                                 <p><span id="art-0"><span data-id="0" class="dv_bg_coloor">To use this plagiarism checker, please copy and paste your content in the box below, and then click on the big blue button that says “Check Plagiarism!</span></span><span id="art-1"><span data-id="1" class="dv_bg_coloor">” then sit back and watch as your article is scanned for duplicated content.</span></span></p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="clearfix"></div> -->
+                        
+                     </div>
+                     
+                  </div>
+                  <div class="clearfix"></div>
+                 
+               </div>
+            </div>
+            <div id="sidebar">
+               <div class="design_studio_sidebar">
+                  <a href="https://designstudio.smallseotools.com/" onClick="pushEventVal('desogn_studio_sidebar')">Design Studio</a>
+               </div>
+               <div class="popular_tool_box box_shadow_border pn mb10 mtn">
+                  <div class="sidebar_adds p5 box_shadow_border sticky mn">
+                     <div class="__hmmm__ text-center" id="hmmmm_nana_STA"></div>
+                  </div>
+                  <div class="clearfix"></div>
+                  <ul>
+                     <li class="popular-seo-t pn">
+                        <h3 class="mn p10">Popular SEO Tools</h3>
+                     </li>
+                     <li>
+                        <a href="https://smallseotools.com/plagiarism-checker/">
+                        Plagiarism Checker <b class="plag_improved_badge">Improved</b>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="https://smallseotools.com/grammar-checker/">
+                        Grammar Check </a>
+                     </li>
+                     <!-- <li>
+                        <span class="glyphicon glyphicon-ok"></span>
+                        <a href="https://smallseotools.com/reverse-image-search/">
+                        Reverse Image Search </a>
+                     </li>
+                     <li>
+                        <span class="glyphicon glyphicon-ok"></span>
+                        <a href="https://smallseotools.com/logo-maker/" onClick="pushEventVal('logomaker_sidebar')">Logo Maker</a>
+                     </li>
+                     <li>
+                        <span class="glyphicon glyphicon-ok"></span>
+                        <a href="https://smallseotools.com/what-is-my-ip/">
+                        What is My IP </a>
+                     </li>
+                     <li>
+                        <span class="glyphicon glyphicon-ok"></span>
+                        <a href="https://smallseotools.com/pdf-to-word-converter/">
+                        PDF To Word Converter </a>
+                     </li>
+                     <li>
+                        <span class="glyphicon glyphicon-ok"></span>
+                        <a href="https://smallseotools.com/internet-speed-test/">
+                        Internet Speed Test </a>
+                     </li>
+                     <li>
+                        <span class="glyphicon glyphicon-ok"></span>
+                        <a href="https://smallseotools.com/website-seo-score-checker/">
+                        SEO checker </a>
+                     </li> -->
+                  </ul>
+                  <div class="clearfix"></div>
+                  <ul>
+                     <li class="popular-seo-t pn">
+                        <h3 class="mn p10">Other Tools</h3>
+                     </li>
+                     <li>
+                        <a href="https://smallseotools.com/article-rewriter/" onclick="push_triggers('Landing from SideBar')">Article Rewriter</a>
+                        <b class="plag_improved_badge">Improved</b>
+                     </li>
+                     <li>
+                        <a href="https://smallseotools.com/image-compressor/">Image Compressor</a>
+                     </li>
+                     
+                  </ul>
+                  <div class="clearfix"></div>
+                  <div class="st_ofset_out"></div>
+                  <div class="clearfix"></div>
+                  <div class="st_sidebar pn">
+                     <div class="__hmmm__ text-center" id="hmmmm_nana_SAAA">
+                        <span class="text-center hidden ____hmmmmmm"><a href="https://smallseotools.com/mazak_ae.html" title="read more" target="_blank" rel="nofollow noopener" class="pic2"></a></span> 
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="clearfix"></div>
+      <div class="f_intro_bg_test"></div>
+      <div class="clearfix"></div>
+     
+     
+      
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="//unpkg.com/string-similarity/umd/string-similarity.min.js"></script>
+      <script>
+      // Queue class 
+      class Queue
+      {
+         // Array is used to implement a Queue 
+         constructor()
+         {
+            this.items = []; 
+         }
+                       
+         // Functions to be implemented 
+         // enqueue(item) 
+         // dequeue() 
+         // front() 
+         // isEmpty() 
+         // printQueue() 
+
+         // enqueue function 
+         enqueue(element)
+         {
+            // adding element to the queue
+            this.items.push(element);
+            //Checking Which item is inserted in queue
+            return this.printQueue();
+         }
+
+         // isEmpty function
+         isEmpty()
+         {
+            // return true if the queue is empty.
+            return this.items.length == 0;
+         }
+
+         // dequeue function
+         dequeue() 
+         {
+            var localitem = localStorage.getItem("api");
+            // console.log(localitem);
+            var litems = localitem.split(" ");
+            for (var i = 0; i < litems.length - 1; i++) {
+               // console.log(litems[i]);
+               queue.enqueue(litems[i]);
+            }
+
+            // removing element from the queue
+            // returns underflow when called
+            // on empty queue
+            if(this.isEmpty()){
+               return "Underflow";
+            }else{
+
+            }
+            return this.items.shift();
+         }
+
+         // front function 
+         front()
+         {
+             // returns the Front element of
+             // the queue without removing it.
+             if(this.isEmpty())
+                 return "No elements in Queue";
+             return this.items[0];
+         }
+
+         // printQueue function 
+         printQueue() 
+         {
+            var str = "";
+            for(var i = 0; i < this.items.length; i++)
+               str += this.items[i] +" ";
+            return str;
+         }
+      }
+
+      var queue = new Queue();
+      
+      // console.log(queue.isEmpty());
+      // AIzaSyDUWY9npmAwNxNwmkb6NuTicKQnoM9fgFM
+      // aedd485fc0bf679c0
+
+      // AIzaSyB9ngn9ZcB4eNumFyQ3db0Bt5hJXyiGTQY
+      // 998bf1711fc0eef2d
+
+      // AIzaSyAA8TBmu6TiKT9HPn7HWx76AKUKnM66ppU
+      // 8b467a752751c5ae3
+      
+      // localStorage.clear();
+      
+      if(localStorage.getItem("api")!=null){
+         console.log(localStorage.getItem("api"));
+         var apiitems = localStorage.getItem("api");
+         var ai = apiitems.split(" ");
+         if (ai.length < 9) {
+            localStorage.clear();
+            
+             
+             
+//            console.log(queue.enqueue("key=AIzaSyBYPW8qnikzQcptKhaYPM7ysme6pxSincw&cx=ebe720bc01f5ef4c3")); ye bali mene banai hai
+              
+            console.log(queue.enqueue("key=AIzaSyDJidSlkRYcSZK89w-FDtoNEq6OdL5vlgQ&cx=ebe720bc01f5ef4c3"));
+            console.log(queue.enqueue("key=AIzaSyDfnGDirKh6NQmrHUuRZjlwEcp6DUlaAJI&cx=ebe720bc01f5ef4c3"));
+            console.log(queue.enqueue("key=AIzaSyAQk3dAKeg_k3K68NIgP38s_CSGPuQvKhI&cx=ebe720bc01f5ef4c3"));
+
+            console.log(queue.enqueue("key=AIzaSyAURYdZGlkKbNM60E4whHvRmoH9r4Vgtec&cx=ebe720bc01f5ef4c3"));
+            console.log(queue.enqueue("key=AIzaSyC_pf3Fg-Qe2LTs-vNF8bjA6aDxjadrfdQ&cx=ebe720bc01f5ef4c3"));
+            console.log(queue.enqueue("key=AIzaSyCwxWFtzHdaGdkCMW4TTdlMTNrAEGTf59M&cx=ebe720bc01f5ef4c3"));
+            console.log(queue.enqueue("key=AIzaSyDUWY9npmAwNxNwmkb6NuTicKQnoM9fgFM&cx=aedd485fc0bf679c0"));
+            console.log(queue.enqueue("key=AIzaSyB9ngn9ZcB4eNumFyQ3db0Bt5hJXyiGTQY&cx=998bf1711fc0eef2d"));
+            console.log(queue.enqueue("key=AIzaSyAA8TBmu6TiKT9HPn7HWx76AKUKnM66ppU&cx=8b467a752751c5ae3"));
+            localStorage.setItem("api",queue.printQueue());
+            // console.log("change api");
+         }else{
+            console.log("same no api changes");
+         }
+         // 
+      }else{
+         console.log(queue.enqueue("key=AIzaSyDJidSlkRYcSZK89w-FDtoNEq6OdL5vlgQ&cx=ebe720bc01f5ef4c3"));
+         console.log(queue.enqueue("key=AIzaSyDfnGDirKh6NQmrHUuRZjlwEcp6DUlaAJI&cx=ebe720bc01f5ef4c3"));
+         console.log(queue.enqueue("key=AIzaSyAQk3dAKeg_k3K68NIgP38s_CSGPuQvKhI&cx=ebe720bc01f5ef4c3"));
+         console.log(queue.enqueue("key=AIzaSyAURYdZGlkKbNM60E4whHvRmoH9r4Vgtec&cx=ebe720bc01f5ef4c3"));
+         console.log(queue.enqueue("key=AIzaSyC_pf3Fg-Qe2LTs-vNF8bjA6aDxjadrfdQ&cx=ebe720bc01f5ef4c3"));
+         console.log(queue.enqueue("key=AIzaSyCwxWFtzHdaGdkCMW4TTdlMTNrAEGTf59M&cx=ebe720bc01f5ef4c3"));
+         console.log(queue.enqueue("key=AIzaSyDUWY9npmAwNxNwmkb6NuTicKQnoM9fgFM&cx=aedd485fc0bf679c0"));
+         console.log(queue.enqueue("key=AIzaSyB9ngn9ZcB4eNumFyQ3db0Bt5hJXyiGTQY&cx=998bf1711fc0eef2d"));
+         console.log(queue.enqueue("key=AIzaSyAA8TBmu6TiKT9HPn7HWx76AKUKnM66ppU&cx=8b467a752751c5ae3"));
+         localStorage.setItem("api",queue.printQueue());
+      }
+      // console.log(queue.printQueue());
+      // console.log(queue.front());
+      // console.log(queue.dequeue());
+      // console.log(queue.front());
+
+      var pbarper = 0;
+      var plagres = 0;
+      var uniqres = 0;
+      var uniqp = '';
+      var plagp = '';
+      var k=0;
+      let input = document.querySelector('input') 
+
+      let textarea = document.querySelector('textarea') 
+
+      // This event listener has been implemented to identify a 
+      // Change in the input section of the html code 
+      // It will be triggered when a file is chosen. 
+      // input.addEventListener('change', () => {
+      //    let files = input.files; 
+
+      //    if (files.length == 0) return; 
+      //    const file = files[0]; 
+
+      //    let reader = new FileReader(); 
+
+      //    reader.onload = (e) => { 
+      //       const file = e.target.result; 
+      //       const lines = file.split(/\r\n|\n/);
+      //       textarea.value = lines.join('\n');
+      //    };
+
+      //    reader.onerror = (e) => alert(e.target.error.name); 
+
+      //    reader.readAsText(file);
+      // });
+
+      $(document).ready(function(){
+         console.log("ready");
+      });
+      $( "#checkPlag" ).click(function() {
+         // alert( "Handler for .submit() called." );
+         var query=$('#textBox').val();
+         if (query=='') {
+            alert("please enter something");
+            return;
+         }
+         // alert("executing");
+         var strlen = query.split('.');
+         // alert(strlen);
+         // var countword = $.trim($('#textBox').val()).split(" ");
+         //   console.log();
+         // if (countword.length>20) {
+         //    getResp(query, strlen[0], 0);
+         //    $('#result-main').css("display","block");
+         // }else{
+         //    alert("Need More Data for Plag");
+         // }
+         $('#ResultTabs').html('<ul class="nav nav-tabs result_tabs">'+
+                           '<li class="active" style="width: 100%; border-right: none;">'+
+                              '<a data-toggle="tab" href="#sentence">'+
+                                 '<span class="text_active">Sentence Wise Result</span>'+
+                              '</a>'+
+                           '</li>'+
+                        '</ul>'+
+                        '<div class="tab-content">'+
+                           '<div id="sentence" class="tab-pane fade in active">'+
+                              '<ul class="sentance_result mt20 mb20" id="resultsBars">'+
+                                 
+                              '</ul>'+
+                           '</div>'+
+                        '</div>'+
+                        '<div class="clearfix"></div>');
+
+         strlen.forEach(getexclam);
+         event.preventDefault();
+      });
+      function getexclam(oristr){
+         if (oristr.includes('!')) {
+            // oristr.forEach(getResp);
+            var strlen = oristr.split('!');
+            strlen.forEach(getResp);
+         }else{ 
+            getResp(oristr + ".");
+         }
+         return;
+      }
+      function getResp(oristr, query, i){
+         var wordSent = oristr.split(' ');
+         if (oristr!='' && wordSent.length > 9) {
+            console.log(wordSent.length);
+         // console.log(oristr);
+            $('#result-main').removeAttr('style');
+            // AIzaSyDUWY9npmAwNxNwmkb6NuTicKQnoM9fgFM
+            // aedd485fc0bf679c0
+
+            // AIzaSyB9ngn9ZcB4eNumFyQ3db0Bt5hJXyiGTQY
+            // 998bf1711fc0eef2d
+
+            // AIzaSyAA8TBmu6TiKT9HPn7HWx76AKUKnM66ppU
+            // 8b467a752751c5ae3
+            var allitem = localStorage.getItem("api");
+            // console.log(localitem);
+            var fitems = allitem.split(" ");
+            
+            // alert(fitems[0]);
+            $.ajax({
+               url:'https://customsearch.googleapis.com/customsearch/v1?'+fitems[0]+'&q='+oristr,
+               method:"GET",
+               success: function(data){
+                  
+                  if(data["searchInformation"]["totalResults"] != 0){
+                     var res = stringSimilarity.findBestMatch(oristr, [
+                        data["items"][0]["snippet"],
+                        data["items"][1]["snippet"],
+                        data["items"][2]["snippet"],
+                        data["items"][3]["snippet"],
+                        data["items"][4]["snippet"],
+                        data["items"][5]["snippet"],
+                        data["items"][6]["snippet"],
+                        data["items"][7]["snippet"],
+                        data["items"][8]["snippet"],
+                        data["items"][9]["snippet"]
+                     ]);
+                     console.log(res);
+                     var plagper = res["bestMatch"]["rating"] * 100;
+                     var resulttext=data["items"][res["bestMatchIndex"]]["snippet"];
+
+                     // console.log(resulttext);
+                     var str = JSON.stringify(data);
+                     // console.log(STR);
+
+                     if (resulttext.includes(oristr)) {
+                        plagres++;
+                        console.log("INCLUDE "+ resulttext + "====> "+ oristr + "=> " + plagper);
+                        $('#resultsBars').append(
+                           '<li class="plagiarized_li">'+
+                              '<span>Plagiarized</span>'+
+                              // '<span style="margin-left:5px;">'+plagper.toFixed(2)+'%</span>'+
+                              '<p class="ossb color-808080 fs13 word_rap_el">'+oristr+'</p>'+
+                              '<div><a href=https://www.google.com/search?q="'+encodeURIComponent(oristr)+'" target="_blank">Compare</a></div>'+
+                           '</li>');
+                     }else{
+                        console.log("NOT include "+ resulttext + "====> "+ oristr + "=> " + plagper);
+
+                        var strlen = oristr.split(' ');
+                        var j = 0;
+                        for (var i = 0; i <= strlen.length; i++) {
+                           if (resulttext.includes(strlen[i])) {
+                              j++;
+                           }else{
+                              // console.log(" Sorry J ");
+                           }
+                        }
+                        var stringMatch = strlen.length - j;
+                        console.log(data["items"][res["bestMatchIndex"]]["link"]);
+                        console.log(j +" / "+ strlen.length);
+                        if(stringMatch<=2){
+                           plagres++;
+                           console.log(" Condition Matched Plag");
+                           $('#resultsBars').append(
+                           '<li class="plagiarized_li">'+
+                              '<span>Plagiarized</span>'+
+                              '<p class="ossb color-808080 fs13 word_rap_el">'+oristr+'</p>'+
+                              '<div><a href=https://www.google.com/search?q="'+encodeURIComponent(oristr)+'" target="_blank">Compare</a></div>'+
+                           '</li>');
+                        }else{
+                           uniqres++;
+                           console.log(" Condition not Matched Uni");
+                           $('#resultsBars').append(
+                           '<li class="unique_li">'+
+                              '<span>Unique</span>'+
+                              '<p class="ossb color-808080 fs13 word_rap_el">'+oristr+'</p>'+
+                           '</li>');
+                        }
+                        var totalres = plagres + uniqres;
+                        console.log(plagres+" / "+uniqres);
+                        uniqp = uniqres/totalres * 100;
+                        plagp = plagres/totalres * 100;
+                        // alert(uniqp);
+
+                        $('#howPlagiarize').removeClass();
+                        $('#howUnique').removeClass();
+                        $('#howPlagiarize').addClass("p"+Math.round(plagp)).addClass('c100 small orange');
+                        $('#howUnique').addClass("p"+Math.round(uniqp)).addClass('c100 small green');
+                        var unip = Math.round(uniqp);
+                        var plap = 100 - unip;
+                        $('#uniqueCount').text(unip+ "%");
+                        $('#plagiarizeCount').text(plap+ "%");
+                     }
+                     // console.log(data);
+                     // '<span style="margin-left:5px;">'+plagper.toFixed(2)+'%</span>'+
+                     event.preventDefault();
+                     window.location="#result-main";
+                  }
+               },
+               error: function(error){
+                  // console.log(k);
+                  console.log(error);
+                  if(k==0){
+                     var itemremoved = queue.dequeue();
+                     queue.enqueue(itemremoved);
+                     // localStorage.clear();
+                     // console.log(queue.printQueue());
+                     localStorage.setItem("api",queue.printQueue());
+                  }
+                  // getResp(oristr, query, i);
+                  k++;
+               }
+            });
+            
+         }else{
+            // alert("something went wrong");
+         }
+      }
+      $('#geturltext').click(function(){
+         var url = $('#badgeUrl').val();
+         $.ajax({
+            url: "geturldata.php",
+            method: "GET",
+            data: {"url":url, "check":"true"},
+            success:function(data){
+               alert(data);
+            }
+         })
+         // var url = $('#badgeUrl').val();
+         // if(url!=''){
+         //    if(/^(http|https|ftp):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/i.test($('#badgeUrl').val())){
+         //    } else {
+         //       alert("invalid URL");
+         //    }
+         // }else{
+         //    alert();
+         // }
+
+      });
+      $('#badgeUrl').keyup(function(){
+         if($('#badgeUrl').val()!=''){
+            $('#checkPlag').css({"background-color":"#808080","box-shadow": "0 2px #656565"});
+            $('#checkPlag').attr("disabled", "true");
+         }else{
+            $('#checkPlag').removeAttr("disabled");
+            $('#checkPlag').css({"background-color":"#1E70B9","box-shadow": "0 2px #0c5595"});
+         }
+         
+      });
+
+      function url_content(url){
+         return $.get(url);
+      }
+      function stripHTML(dirtyString) {
+         var container = document.createElement('div');
+         var text = document.createTextNode(dirtyString);
+         container.appendChild(text);
+         container.innerHTML = dirtyString;
+         return container.textContent || container.innerText || "";
+         // return container.innerHTML; // innerHTML will be a xss safe string
+      }
+      function isHTML(str) {
+         var a = document.createElement('div');
+         a.innerHTML = str;
+         for (var c = a.childNodes, i = c.length; i--; ) {
+           if (c[i].nodeType == 1) return true; 
+         }
+         return false;
+      }
+      // function httpGet(theUrl)
+      // {
+      //    var xmlHttp = null;
+   
+      //    xmlHttp = new XMLHttpRequest();
+      //    xmlHttp.open( "GET", theUrl, false );
+      //    xmlHttp.send( null );
+      //    return xmlHttp.responseText;
+      // }
+
+      </script>
+      <div id="response_links"></div>
+      </body>
+</html>
